@@ -3,10 +3,12 @@ const PORT = process.env.PORT || 8080;
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const passport = require("passport");
+const path = require("path");
+const http = require("http");
 //using flash method because we are redirecting and want to store it in the session
 const flash = require("connect-flash");
 const session = require("express-session");
-
+const reload = require("reload");
 require("./config/passport")(passport);
 
 const app = express();
@@ -24,8 +26,9 @@ mongoose
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 ///Reference to css
+const publicDirectory = path.join(__dirname, "public");
+app.use("/js/shop", express.static(publicDirectory));
 app.use(express.static("./public"));
-app.use("/js/audio", express.static(__dirname + "public"));
 //Bodypraser from forms
 app.use(express.urlencoded({ extended: false }));
 
@@ -58,6 +61,9 @@ app.use("/", require("./routes/index.js"));
 app.use("/users", require("./routes/users.js"));
 
 //Start listening at localhost:3000
-app.listen(PORT, () => {
+const server = http.createServer(app);
+
+server.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}!!!`);
 });
+reload(app);

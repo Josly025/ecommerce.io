@@ -4,8 +4,7 @@
   "description": "- Vanilla JS ecommerce app",
   "main": "app.js",
   "scripts": {
-    "start": "node ./app.js",
-    "watch": "nodemon ./app.js "
+    "start": "nodemon server.js -e ejs,js,css,html"
   },
   "repository": {
     "type": "git",
@@ -29,6 +28,7 @@
     "mongoose": "^5.11.15",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "reload": "^3.1.1"
   }
 }
