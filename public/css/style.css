@@ -41,7 +41,10 @@ body {
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-weight: 300; }
+    font-weight: 400;
+    color: #333333 !important;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #1ec91e; }
   .welcome__anchor {
     display: inline-block;
     text-align: center;
@@ -77,8 +80,10 @@ body {
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-weight: 300;
-    color: #333333 !important; }
+    font-weight: 400;
+    color: #333333 !important;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #1ec91e; }
   .login__input {
     font-size: 1rem;
     padding: 1rem;
@@ -119,11 +124,13 @@ body {
   top: 0;
   left: 0; }
   .signup__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
-    font-weight: 300;
-    color: #333333 !important; }
+    font-weight: 400;
+    color: #333333 !important;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #1ec91e; }
   .signup__input {
     font-size: 1rem;
     padding: 1rem;
