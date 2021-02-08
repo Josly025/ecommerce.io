@@ -4,20 +4,20 @@
       <div class="card-header text-center text-info"><h3>Login</h3></div>
       <div class="card-body"> -->
 <%- include ("./partials/messages"); %>
-<div class="body__inital">
+<div class="login">
   <div
     class="body__login uk-child-width-1-3@m uk-grid-medium uk-grid-match uk-margin-large-top uk-flex uk-flex-center"
     uk-grid
   >
-    <div class="uk-card uk-card-secondary uk-card-body" id="card__login">
+    <div class="uk-card uk-card-secondary uk-card-body glass">
       <form action="/users/login" method="POST">
         <div class="uk-margin uk-text-center">
-          <h3 class="uk-card-title text__title">Login</h3>
+          <h3 class="login__title">Log in</h3>
 
-          <div class="uk-inline">
+          <div class="uk-inline uk-width-1-1">
             <span class="uk-form-icon" uk-icon="icon: user"></span>
             <input
-              class="uk-input"
+              class="uk-input login__input"
               type="email"
               id="email"
               name="email"
@@ -27,13 +27,13 @@
         </div>
 
         <div class="uk-margin uk-text-center">
-          <div class="uk-inline">
+          <div class="uk-inline uk-width-1-1">
             <span
               class="uk-form-icon uk-form-icon-flip"
               uk-icon="icon: lock"
             ></span>
             <input
-              class="uk-input"
+              class="uk-input login__input"
               type="password"
               id="password"
               name="password"
@@ -45,16 +45,14 @@
         <button
           type="submit"
           id="btn__login"
-          class="uk-button uk-button-primary inital-btn"
+          class="uk-button uk-button-primary login__btn uk-width-1-1"
         >
           Login
         </button>
       </form>
 
-      <p class="uk-text-center text__transition">
-        Don't have an account?<a
-          class="text__transition--anchor"
-          href="/users/signup"
+      <p class="uk-text-center login__text">
+        Don't have an account?<a class="login__anchor" href="/users/signup"
           >Sign Up</a
         >
       </p>

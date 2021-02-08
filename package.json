@@ -4,7 +4,8 @@
   "description": "- Vanilla JS ecommerce app",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js -e ejs,js,css,html"
+    "start": "nodemon server.js -e ejs,js,css,html",
+    "compile:sass": "node-sass public/sass/main.scss public/css/style.css -w"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "express-ejs-layouts": "^2.5.0",
     "express-session": "^1.17.1",
     "mongoose": "^5.11.15",
+    "node-sass": "^5.0.0",
     "nodemon": "^2.0.7",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
