@@ -1,0 +1,95 @@
+<%- include ("./partials/messages"); %>
+<div class="body__inital">
+  <div
+    class="uk-child-width-1-3@m uk-grid-medium uk-grid-match uk-margin-large-top uk-flex uk-flex-center"
+    uk-grid
+  >
+    <div class="uk-card uk-card-secondary uk-card-body" id="card__signup">
+      <form action="/users/signup" method="POST">
+        <div class="uk-margin uk-text-center">
+          <h3 class="uk-card-title uk-text-center text__title">
+            Welcome to Modist
+          </h3>
+          <h3 class="uk-card-title text__title--secondary">
+            create an account
+          </h3>
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input
+              type="name"
+              id="name"
+              name="name"
+              placeholder="Enter Name"
+              value="<%= typeof name != 'undefined' ? name : '' %>"
+              class="uk-input"
+            />
+          </div>
+        </div>
+
+        <div class="uk-margin uk-text-center">
+          <div class="uk-inline">
+            <span class="uk-form-icon" uk-icon="icon: user"></span>
+            <input
+              class="uk-input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter Email"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+          </div>
+        </div>
+
+        <div class="uk-margin uk-text-center">
+          <div class="uk-inline">
+            <span
+              class="uk-form-icon uk-form-icon-flip"
+              uk-icon="icon: lock"
+            ></span>
+            <input
+              class="uk-input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Create Password"
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+          </div>
+        </div>
+
+        <div class="uk-margin uk-text-center">
+          <div class="uk-inline">
+            <span
+              class="uk-form-icon uk-form-icon-flip"
+              uk-icon="icon: lock"
+            ></span>
+            <input
+              class="uk-input"
+              type="password"
+              id="password2"
+              name="password2"
+              placeholder="Confirm Password"
+              value="<%= typeof password2 != 'undefined' ? password2 : '' %>"
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          id="btn__signup"
+          class="uk-button uk-button-primary inital-btn"
+        >
+          Login
+        </button>
+      </form>
+
+      <p class="uk-text-bold-secondary uk-text-center text__transition">
+        Already have an account?<a
+          href="/users/login"
+          class="text-info text-muted"
+        >
+          Login</a
+        >
+      </p>
+    </div>
+  </div>
+</div>

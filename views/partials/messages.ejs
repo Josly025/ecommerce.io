@@ -1,0 +1,21 @@
+<% if(locals.errors){ %> <% errors.forEach(function(error) { %>
+<div class="uk-alert-primary uk-margin-small-top" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p><%= error.msg %></p>
+</div>
+<% }); %> <% } %> <% if(success_msg != ''){ %>
+<div class="uk-alert-success uk-margin-small-top" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p><%= success_msg %></p>
+</div>
+<% } %> <% if(error_msg != ''){ %>
+<div class="uk-alert-primary uk-margin-small-top" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p><%= error_msg %></p>
+</div>
+<% } %> <% if(error != ''){ %>
+<div class="uk-alert-primary uk-margin-small-top" uk-alert>
+  <a class="uk-alert-close" uk-close></a>
+  <p><%= error %></p>
+</div>
+<% } %>
