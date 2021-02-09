@@ -1,3 +1,37 @@
-<!-- <h5 class="text-info">Welcome <%= name %></h5>
-<a href="/users/logout" class="nav-link">Logout<span uk-icon="heart"></span></a> -->
-<h1>this is dashboard</h1>
+
+<nav class="uk-navbar-container nav" uk-navbar>
+  <h5 class="text-info">Welcome <%= name %></h5>
+<a href="/users/logout" class="nav-link">Logout</span></a>
+  <div class="uk-navbar-left">
+    <ul class="uk-navbar-nav">
+      <li class="uk-active"><a href="#">Shred Outlet</a></li>
+      <li>
+        <a href="#">Parent</a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">Item</a></li>
+    </ul>
+  </div>
+  <div class="uk-navbar-right">
+    <ul class="uk-navbar-nav">
+      <li class="uk-active"><a href="#">Active</a></li>
+      <li>
+        <a href="#">Parent</a>
+        <div class="uk-navbar-dropdown">
+          <ul class="uk-nav uk-navbar-dropdown-nav">
+            <li class="uk-active"><a href="#">Active</a></li>
+            <li><a href="#">Item</a></li>
+            <li><a href="#">Item</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#">Item</a></li>
+    </ul>
+  </div>
+</nav>
