@@ -1,2 +1,2 @@
-# ecommerce.io
-- Vanilla JS ecommerce app
+# e-ssentials.io
+- Full functioning authentication for online shopping with that vanilla JS and SASSSY style

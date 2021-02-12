@@ -1,12 +1,12 @@
 const express = require("express");
-const PORT = process.env.PORT || 8081;
+const PORT = process.env.PORT || 8080;
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const passport = require("passport");
 //using flash method because we are redirecting and want to store it in the session
 const flash = require("connect-flash");
 const session = require("express-session");
-const reload = require("reload");
+
 require("./config/passport")(passport);
 
 const app = express();
@@ -24,8 +24,8 @@ mongoose
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 ///Reference to css
-app.use(express.static("/public"));
-app.use("/js/shop.js", express.static(__dirname + "public"));
+app.use(express.static("./public"));
+app.use("/js/audio", express.static(__dirname + "public"));
 //Bodypraser from forms
 app.use(express.urlencoded({ extended: false }));
 
@@ -36,7 +36,6 @@ app.use(
     secret: "secret coding",
     resave: true,
     saveUninitialized: true,
-    cookie: { secure: false },
   })
 );
 
@@ -49,7 +48,7 @@ app.use(flash());
 //custom middleware
 app.use((req, res, next) => {
   res.locals.success_msg = req.flash("success_msg");
-  res.locals.error_msg = req.flash("error_msg");
+  res.locals.error_msg = req.flash("success_msg");
   res.locals.error = req.flash("error");
   next();
 });
@@ -62,4 +61,3 @@ app.use("/users", require("./routes/users.js"));
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}!!!`);
 });
-reload(app);
