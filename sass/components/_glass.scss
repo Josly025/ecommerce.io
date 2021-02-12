@@ -1,0 +1,12 @@
+.glass {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.192);
+  border-radius: 0;
+  padding: 7rem;
+  position: relative;
+  z-index: 1;
+  /* color:rgba(128, 128, 128, 0.801) */
+  backdrop-filter: blur(70px);
+  border: solid 1px transparent;
+  background-clip: padding-box;
+}
