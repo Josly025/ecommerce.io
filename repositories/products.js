@@ -1,7 +1,7 @@
 const fs = require("fs");
 const crypto = require("crypto");
 
-module.export = class Repository {
+class ProductsRepo {
   constructor(filename) {
     if (!filename) {
       throw new Error("Creating a repository requires a filename");
@@ -83,4 +83,6 @@ module.export = class Repository {
       }
     }
   }
-};
+}
+
+module.exports = new ProductsRepo("products.json");

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-
+const productsRepo = require("../repositories/products");
 //list products
 router.get("/products", (req, res) => {});
 
