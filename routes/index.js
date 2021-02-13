@@ -32,5 +32,22 @@ router.get("/newProduct", (req, res) => {
       myCss: myCss,
     };
 });
+router.get("/cart", (req, res) => {
+  res.render("cart", {
+    name: req.user.name,
+  }),
+    {
+      myCss: myCss,
+    };
+});
+
+router.get("/admin", (req, res) => {
+  res.render("admin", {
+    name: req.user.name,
+  }),
+    {
+      myCss: myCss,
+    };
+});
 
 module.exports = router;

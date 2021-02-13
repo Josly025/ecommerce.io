@@ -6,7 +6,7 @@
       <li>
         <li><a href="/dashboard"class="nav__link">Dashboard</a></li>
         <li><a href="/newProduct" class="nav__link">New Product</a></li>
-         <li><a class="nav__link">Nav 3</a></li>
+         <li><a href="/admin" class="nav__link">Admin</a></li>
       </li>
     </ul>
   </div>
@@ -14,7 +14,7 @@
     <ul class="uk-navbar-nav">
       <li><a class="nav__left--name">Welcome, <%= name %></a></li>
       <li class="uk-active">
-        <a href="/users/cart"
+        <a href="/cart"
           ><i class="fas fa-shopping-cart nav__left--cart"></i
         ></a>
       </li>
@@ -25,5 +25,48 @@
   </div>
 </nav>
 <!--Create Product Inputs-->
+<div class="uk-child-width-expand@s uk-text-center uk-margin-large-top" uk-grid uk-height-match="target: > div > .uk-card">
+    <div class="newProduct">
+        <div class="uk-card uk-card-default uk-card-body ">
+           <form action="/newProduct" method="POST">
+        <div class="uk-margin uk-text-center">
+          <h3 class="newProduct__title">Create Product</h3>
 
-<h2>this is new product</h2>
+          <div class="uk-inline uk-width-1-3">
+            <span class="uk-form-icon" uk-icon="icon: info"></span>
+            <input
+              class="uk-input newProduct__input"
+              type="product"
+              id="product"
+              name="product"
+              placeholder="Product Title"
+            />
+          </div>
+        </div>
+
+        <div class="uk-margin uk-text-center">
+          <div class="uk-inline uk-width-1-3">
+            <span
+              class="uk-form-icon uk-form-icon"
+              uk-icon="icon: tag"
+            ></span>
+            <input
+              class="uk-input newProduct__input"
+              type="price"
+              id="price"
+              name="price"
+              placeholder="Product Price"
+            />
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="uk-button uk-button-primary newProduct__btn uk-width-1-3"
+        >
+          Create Product
+        </button>
+      </form>
+  
+   
+</div>
