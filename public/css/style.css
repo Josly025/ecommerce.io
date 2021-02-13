@@ -1,12 +1,9 @@
 * {
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 body {
-  font-size: 10px;
-  font-family: "Hind Guntur", sans-serif;
-}
+  font-size: 10px; }
 
 .glass {
   display: inline-block;
@@ -18,8 +15,7 @@ body {
   /* color:rgba(128, 128, 128, 0.801) */
   backdrop-filter: blur(70px);
   border: solid 1px transparent;
-  background-clip: padding-box;
-}
+  background-clip: padding-box; }
 
 .welcome {
   background-image: url("../images/gear.png");
@@ -39,30 +35,78 @@ body {
   /* Set up positioning */
   position: fixed;
   top: 0;
-  left: 0;
-}
-.welcome__title {
-  font-size: 3rem;
+  left: 0; }
+  .welcome__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 400;
+    color: #333333 !important;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #1ec91e; }
+  .welcome__anchor {
+    display: inline-block;
+    text-align: center;
+    font-size: 2rem;
+    color: #1ec91e;
+    letter-spacing: 0.2rem;
+    font-weight: 200;
+    text-transform: uppercase; }
+    .welcome__anchor--link:hover {
+      color: #333333;
+      text-decoration: none; }
+
+.nav__left--name {
+  margin: 1rem 1rem 1rem 1rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-weight: 400;
   color: #333333 !important;
   -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: #1ec91e;
-}
-.welcome__anchor {
-  display: inline-block;
-  text-align: center;
+  -webkit-text-stroke-color: #1ec91e; }
+
+.nav__left--cart {
   font-size: 2rem;
-  color: #1ec91e;
-  letter-spacing: 0.2rem;
-  font-weight: 200;
+  margin: 2.5rem 1rem 1rem 1rem;
+  color: #333333; }
+  .nav__left--cart:hover {
+    text-shadow: #1ec91e;
+    text-shadow: 0rem 0rem 1rem #1ec91e; }
+
+.nav__left--logout {
+  margin: 1rem 1rem 1rem 1rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
-}
-.welcome__anchor--link:hover {
-  color: #333333;
-  text-decoration: none;
-}
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: #333333 !important;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #1ec91e; }
+
+.nav__left--icon {
+  font-size: 1rem;
+  margin-left: 0.2rem; }
+
+.nav__title {
+  margin: 1rem 1rem 1rem 1rem;
+  font-size: 1.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: #333333 !important;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #1ec91e; }
+
+.nav__link {
+  margin: 1rem 1rem 1rem 1rem;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: #333333 !important;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #1ec91e; }
 
 .login {
   background-image: url("../images/gear.png");
@@ -82,41 +126,34 @@ body {
   /* Set up positioning */
   position: fixed;
   top: 0;
-  left: 0;
-}
-.login__title {
-  font-size: 3rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-weight: 400;
-  color: #333333 !important;
-  -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: #1ec91e;
-}
-.login__input {
-  font-size: 1rem;
-  padding: 1rem;
-  height: 3rem;
-}
-.login__input::placeholder {
-  color: #1ec91e !important;
-  letter-spacing: 0.1rem;
-}
-.login__btn {
-  font-size: 1rem;
-  background: #1ec91e !important;
-  color: rgba(255, 255, 255, 0.849) !important;
-  letter-spacing: 0.1rem;
-}
-.login__text {
-  font-size: 1rem;
-  font-size: 1rem;
-}
-.login__anchor {
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  color: #333333 !important;
-}
+  left: 0; }
+  .login__title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 400;
+    color: #333333 !important;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #1ec91e; }
+  .login__input {
+    font-size: 1rem;
+    padding: 1rem;
+    height: 3rem; }
+    .login__input::placeholder {
+      color: #1ec91e !important;
+      letter-spacing: 0.1rem; }
+  .login__btn {
+    font-size: 1rem;
+    background: #1ec91e !important;
+    color: rgba(255, 255, 255, 0.849) !important;
+    letter-spacing: 0.1rem; }
+  .login__text {
+    font-size: 1rem;
+    font-size: 1rem; }
+  .login__anchor {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    color: #333333 !important; }
 
 .signup {
   background-image: url("../images/gear.png");
@@ -136,41 +173,34 @@ body {
   /* Set up positioning */
   position: fixed;
   top: 0;
-  left: 0;
-}
-.signup__title {
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.2rem;
-  font-weight: 400;
-  color: #333333 !important;
-  -webkit-text-stroke-width: 0.8px;
-  -webkit-text-stroke-color: #1ec91e;
-}
-.signup__input {
-  font-size: 1rem;
-  padding: 1rem;
-  background-color: transparent;
-  height: 3rem;
-}
-.signup__input::placeholder {
-  color: #1ec91e;
-  letter-spacing: 0.1rem;
-}
-.signup__btn {
-  font-size: 1rem;
-  background: #1ec91e !important;
-  color: rgba(255, 255, 255, 0.849) !important;
-  letter-spacing: 0.1rem;
-  width: 14rem;
-  margin-left: 1.2rem;
-}
-.signup__text {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.849);
-}
-.signup__anchor {
-  font-size: 1rem;
-  margin-left: 0.5rem;
-  color: #333333 !important;
-}
+  left: 0; }
+  .signup__title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: 400;
+    color: #333333 !important;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: #1ec91e; }
+  .signup__input {
+    font-size: 1rem;
+    padding: 1rem;
+    background-color: transparent;
+    height: 3rem; }
+    .signup__input::placeholder {
+      color: #1ec91e;
+      letter-spacing: 0.1rem; }
+  .signup__btn {
+    font-size: 1rem;
+    background: #1ec91e !important;
+    color: rgba(255, 255, 255, 0.849) !important;
+    letter-spacing: 0.1rem;
+    width: 14rem;
+    margin-left: 1.2rem; }
+  .signup__text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.849); }
+  .signup__anchor {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    color: #333333 !important; }
