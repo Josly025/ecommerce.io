@@ -56,7 +56,9 @@ app.use((req, res, next) => {
 //ROUTES!!! - index vs. users file
 app.use("/", require("./routes/index.js"));
 app.use("/users", require("./routes/users.js"));
+app.use("/products", require("./routes/products"));
 
+/////
 //Start listening at localhost:3000
 app.listen(PORT, () => {
   console.log(`Listening on PORT ${PORT}!!!`);
