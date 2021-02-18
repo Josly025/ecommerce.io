@@ -28,7 +28,7 @@
 <div class="uk-child-width-expand@s uk-text-center uk-margin-large-top" uk-grid uk-height-match="target: > div > .uk-card">
     <div class="newProduct">
         <div class="uk-card uk-card-default uk-card-body ">
-           <form action="/newProduct" method="POST">
+           <form  method="POST">
         <div class="uk-margin uk-text-center">
           <h3 class="newProduct__title">Create Product</h3>
 
@@ -36,9 +36,9 @@
             <span class="uk-form-icon" uk-icon="icon: info"></span>
             <input
               class="uk-input newProduct__input"
-              type="product"
-              id="product"
-              name="product"
+              type="title"
+              id="title"
+              name="title"
               placeholder="Product Title"
             />
           </div>
@@ -64,7 +64,7 @@
    
     <span id="newProduct__drop" class="uk-text-middle">Drop product image here or</span>
     <div uk-form-custom  id="newProduct__link">
-        <input type="file" multiple >
+        <input type="file" name="image" multiple >
         <span><span uk-icon="icon: cloud-upload">Browse Files</span>
     </div>
 </div>
