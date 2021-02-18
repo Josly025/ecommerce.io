@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { ensureAutheticated } = require("../config/auth");
+const { requireTitle, requirePrice } = require("../config/validators");
 var fs = require("fs");
 const myCss = {
   style: fs.readFileSync("./public/css/style.css", "utf8"),
