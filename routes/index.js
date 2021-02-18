@@ -24,7 +24,7 @@ router.get("/dashboard", ensureAutheticated, (req, res) => {
       myCss: myCss,
     };
 });
-
+///Routes for newProduct -- Creating a new Product
 router.get("/newProduct", (req, res) => {
   res.render("newProduct", {
     name: req.user.name,
@@ -33,6 +33,13 @@ router.get("/newProduct", (req, res) => {
       myCss: myCss,
     };
 });
+//handle the form submission
+router.post("/newProduct", [requireTitle, requirePrice], (req, res) => {
+  res.send("submitted");
+  //info for the form is in req.body
+  console.log(req.body);
+});
+
 router.get("/cart", (req, res) => {
   res.render("cart", {
     name: req.user.name,
