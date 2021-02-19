@@ -266,11 +266,19 @@ body {
     color: #1ec91e !important;
     letter-spacing: 0.1rem; }
 
+.newProduct__upload {
+  color: #333333 !important;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #1ec91e;
+  letter-spacing: 0.1rem; }
+
 .newProduct__btn {
   font-size: 1rem;
   background: #1ec91e !important;
-  color: rgba(255, 255, 255, 0.849) !important;
+  color: #333333 !important;
   letter-spacing: 0.1rem; }
+  .newProduct__btn:hover {
+    border: 1px solid #333333; }
 
 .newProduct__text {
   font-size: 1rem;
