@@ -1,11 +1,15 @@
 const express = require("express");
-const router = express.Router();
+
 const { ensureAutheticated } = require("../config/auth");
 const { requireTitle, requirePrice } = require("../config/validators");
-var fs = require("fs");
+const fs = require("fs");
+const multer = require("multer");
 const myCss = {
   style: fs.readFileSync("./public/css/style.css", "utf8"),
 };
+const router = express.Router();
+const upload = multer({ storage: multer.memoryStorage() });
+
 const productsRepo = require("../repositories/products");
 // at "/ " render the welcome view
 router.get("/", (req, res) => {
@@ -15,7 +19,7 @@ router.get("/", (req, res) => {
     };
 });
 
-// Dashboard -- protected view with config/ensureAutheticated
+// Dashboard -- protected view wiåßh config/ensureAutheticated
 router.get("/dashboard", ensureAutheticated, (req, res) => {
   res.render("dashboard", {
     name: req.user.name,
