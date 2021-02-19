@@ -25,7 +25,7 @@ app.use(expressLayouts);
 app.set("view engine", "ejs");
 ///Reference to css
 app.use(express.static("./public"));
-app.use("/js/audio", express.static(__dirname + "public"));
+app.use("/js/shop", express.static(__dirname + "public"));
 //Bodypraser from forms
 app.use(express.urlencoded({ extended: false }));
 

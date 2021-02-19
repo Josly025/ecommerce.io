@@ -4,6 +4,6 @@ module.exports = {
       return next();
     }
     req.flash("error_msg", "Log in order to view the Dashboard.");
-    req.redirect("users/login");
+    res.redirect("users/login");
   },
 };
