@@ -1,20 +1,28 @@
-<h1 class="title">Products</h1>
+<h1 class="dash__title--main uk-text-center">Products</h1>
 <div
   id="products"
-  class="uk-child-width-expand@s uk-text-center"
+  class="uk-child-width-expand@s uk-text-center uk-grid-medium uk-grid-match"
   uk-grid="parallax: 150"
 >
   <% products.forEach((product) => { %>
-  <div class="uk-child-width-expand@s uk-text-center" uk-grid="parallax: 150">
-    <div class="uk-card uk-card-default uk-grid-margin">
+  <div class="uk-text-center uk-width-1-3@m">
+    <div class="uk-card uk-card-default uk-grid-margin uk-align-center">
       <div class="uk-card-media-top">
-        <img src="<%=product.image %>" alt="" />
+        <img
+          class="dash__image uk-margin-medium-top"
+          src="data:image/png;base64, <%= product.image %>"
+          alt=""
+        />
       </div>
       <div class="uk-card-body">
-        <h3 class="uk-card-title"><%= product.title %></h3>
-        <h3 class="uk-card-title"><%= product.price %></h3>
+        <h3 class="uk-card-title dash__title--product"><%= product.title %></h3>
+        <h3 class="uk-card-title dash__price">$<%= product.price %></h3>
       </div>
-      <button class="uk-button uk-button-default">Add To Cart</button>
+      <button
+        class="uk-button uk-button-default uk-margin-medium-bottom dash__cartBtn"
+      >
+        Add To Cart
+      </button>
     </div>
   </div>
   <% }) %>

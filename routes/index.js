@@ -21,8 +21,7 @@ router.get("/", (req, res) => {
 // Dashboard -- protected view wiåßh config/ensureAutheticated
 router.get("/dashboard", ensureAutheticated, async (req, res) => {
   const products = await productsRepo.getAll();
-  console.log(products);
-  console.log("this is products" + products);
+
   res.render("dashboard", {
     name: req.user.name,
     products: products,
