@@ -341,4 +341,26 @@ body {
   background: #333333 !important;
   color: #1ec91e !important;
   border: 2px solid #1ec91e;
-  letter-spacing: 0.1rem; }
+  letter-spacing: 0.1rem;
+  width: 15%; }
+
+.admin__table--text {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+  color: #333333 !important;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #1ec91e; }
+
+.admin__table--btn {
+  font-size: 1rem;
+  background: #f8f8f8;
+  color: #1ec91e !important;
+  border: 2px solid #1ec91e;
+  letter-spacing: 0.1rem;
+  width: 15%; }
+
+.admin__table--icon {
+  color: #333333 !important;
+  font-weight: 400; }

@@ -5,34 +5,45 @@
 <h3 class="admin__title--sub uk-text-center uk-margin-medium-bottom">
   Edit and Delete Products
 </h3>
-<button class="uk-button uk-button-default uk-align-center">
-  <a class="admin__btn" href="/newProduct"> New Product </a>
-</button>
-<!--Table-->
-<table class="uk-table uk-table-justify uk-table-divider admin__table">
+<a
+  href="/newProduct"
+  class="uk-button uk-button-default uk-align-center admin__btn uk-button-small"
+>
+  New Product
+</a>
+<!--Table--><!-- ejs loop through this -->
+<table
+  class="uk-table uk-table-justify uk-table-divider admin__table uk-table-responsive"
+>
   <thead>
     <tr>
-      <th class="uk-width-small uk-text-center">Image</th>
-      <th class="uk-width-small uk-text-center">Product</th>
-      <th class="uk-width-small uk-text-center">Price</th>
-      <th class="uk-width-small uk-text-center">Edit Product</th>
-      <th class="uk-width-small uk-text-center">Remove Product</th>
+      <th class="uk-width-small uk-text-center uk-text-secondary">Image</th>
+      <th class="uk-width-small uk-text-center uk-text-secondary">Product</th>
+      <th class="uk-width-small uk-text-center uk-text-secondary">Price</th>
+      <th class="uk-width-small uk-text-center uk-text-secondary">
+        Edit Product
+      </th>
+      <th class="uk-width-small uk-text-center uk-text-secondary">
+        Remove Product
+      </th>
     </tr>
   </thead>
   <tbody>
+    <% productsTwo.forEach((product) => { %>
     <tr>
       <td class="uk-width-small uk-text-center">
         <img
           class="uk-preserve-width uk-border-circle"
-          src="images/avatar.jpg"
+          src="data:image/png;base64, <%= product.image %>"
           width="40"
           alt=""
         />
       </td>
-      <td class="uk-width-small uk-text-center">Table Data</td>
-      <td class="uk-width-small uk-text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
+      <td class="uk-width-small uk-text-center admin__table--text">
+        <%= product.title %>
+      </td>
+      <td class="uk-width-small uk-text-center admin__table--text">
+        $<%= product.price %>
       </td>
       <td class="uk-width-small uk-text-center">
         <button class="uk-button uk-button-default" type="button">
@@ -46,13 +57,10 @@
       </td>
       <td class="uk-width-small uk-text-center">
         <button class="uk-button uk-button-default" type="button">
-          <a
-            href="#"
-            class="uk-icon-link uk-margin-small-right"
-            uk-icon="close"
-          ></a>
+          <a href="#" class="uk-icon-link" uk-icon="close"></a>
         </button>
       </td>
     </tr>
+    <% }) %>
   </tbody>
 </table>

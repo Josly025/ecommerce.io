@@ -66,9 +66,11 @@ router.get("/cart", (req, res) => {
     };
 });
 
-router.get("/admin", (req, res) => {
+router.get("/admin", async (req, res) => {
+  const productsTwo = await productsRepo.getAll();
   res.render("admin", {
     name: req.user.name,
+    productsTwo: productsTwo,
   }),
     {
       myCss: myCss,
