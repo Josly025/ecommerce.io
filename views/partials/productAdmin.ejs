@@ -1,39 +1,53 @@
-<h1 class="admin__title uk-text-center uk-margin-medium-bottom">Products</h1>
+<h1 class="admin__title uk-text-center uk-margin-medium-bottom">
+  Administration
+</h1>
 
 <h3 class="admin__title--sub uk-text-center uk-margin-medium-bottom">
   Edit and Delete Products
 </h3>
 <!--Table-->
-<table class="uk-table uk-table-justify uk-table-divider">
+<table class="uk-table uk-table-justify uk-table-divider admin__table">
   <thead>
     <tr>
-      <th class="uk-width-small">Table Heading</th>
-      <th>Table Heading</th>
-      <th>Table Heading</th>
+      <th class="uk-width-small uk-text-center">Image</th>
+      <th class="uk-width-small uk-text-center">Product</th>
+      <th class="uk-width-small uk-text-center">Price</th>
+      <th class="uk-width-small uk-text-center">Edit Product</th>
+      <th class="uk-width-small uk-text-center">Remove Product</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>Table Data</td>
-      <td>
+      <td class="uk-width-small uk-text-center">
+        <img
+          class="uk-preserve-width uk-border-circle"
+          src="images/avatar.jpg"
+          width="40"
+          alt=""
+        />
+      </td>
+      <td class="uk-width-small uk-text-center">Table Data</td>
+      <td class="uk-width-small uk-text-center">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua.
       </td>
-      <td>
+      <td class="uk-width-small uk-text-center">
         <button class="uk-button uk-button-default" type="button">
-          Button
+          <a
+            href="#"
+            class="uk-icon-link uk-margin-small-right"
+            uk-icon="file-edit"
+          ></a>
+          Edit
         </button>
       </td>
-    </tr>
-    <tr>
-      <td>Table Data</td>
-      <td>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </td>
-      <td>
+      <td class="uk-width-small uk-text-center">
         <button class="uk-button uk-button-default" type="button">
-          Button
+          <a
+            href="#"
+            class="uk-icon-link uk-margin-small-right"
+            uk-icon="close"
+          ></a>
         </button>
       </td>
     </tr>
