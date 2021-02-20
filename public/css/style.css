@@ -332,3 +332,13 @@ body {
   color: #333333 !important;
   -webkit-text-stroke-width: 0.8px;
   -webkit-text-stroke-color: #1ec91e; }
+
+.admin__table {
+  margin: 1rem 0rem; }
+
+.admin__btn {
+  font-size: 1rem;
+  background: #333333 !important;
+  color: #1ec91e !important;
+  border: 2px solid #1ec91e;
+  letter-spacing: 0.1rem; }
