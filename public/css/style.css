@@ -314,3 +314,21 @@ body {
   pointer-events: auto !important;
   cursor: pointer;
   color: #1ec91e; }
+
+.admin__title {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: #333333 !important;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #1ec91e; }
+
+.admin__title--sub {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  color: #333333 !important;
+  -webkit-text-stroke-width: 0.8px;
+  -webkit-text-stroke-color: #1ec91e; }
