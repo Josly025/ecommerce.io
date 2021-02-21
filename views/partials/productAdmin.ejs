@@ -48,7 +48,7 @@
       <td class="uk-width-small uk-text-center">
         <button class="uk-button uk-button-default" type="button">
           <a
-            href="#"
+            href=""
             class="uk-icon-link uk-margin-small-right"
             uk-icon="file-edit"
           ></a>
@@ -56,9 +56,11 @@
         </button>
       </td>
       <td class="uk-width-small uk-text-center">
-        <button class="uk-button uk-button-default" type="button">
-          <a href="#" class="uk-icon-link" uk-icon="close"></a>
-        </button>
+        <form method="POST" action="/admin/<%= product.id %>/delete">
+          <button class="uk-button uk-button-default" type="button">
+            <a href="#" class="uk-icon-link" uk-icon="close"></a>
+          </button>
+        </form>
       </td>
     </tr>
     <% }) %>

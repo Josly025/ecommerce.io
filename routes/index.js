@@ -3,12 +3,14 @@ const { ensureAutheticated } = require("../config/auth");
 const { requireTitle, requirePrice } = require("../config/validators");
 const fs = require("fs");
 const multer = require("multer");
+const cartsRepo = require("../repositories/carts");
 const myCss = {
   style: fs.readFileSync("./public/css/style.css", "utf8"),
 };
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 const productsRepo = require("../repositories/products");
+const carts = require("../repositories/carts");
 
 // at "/ " render the welcome view
 router.get("/", (req, res) => {
@@ -57,15 +59,6 @@ router.post(
   }
 );
 
-router.get("/cart", (req, res) => {
-  res.render("cart", {
-    name: req.user.name,
-  }),
-    {
-      myCss: myCss,
-    };
-});
-
 router.get("/admin", async (req, res) => {
   const productsTwo = await productsRepo.getAll();
   res.render("admin", {
@@ -75,6 +68,72 @@ router.get("/admin", async (req, res) => {
     {
       myCss: myCss,
     };
+});
+
+///delete product from admin page
+router.post("admin/:id/delete", async (req, res) => {
+  await productsRepo.delete(req.params.id);
+  res.redirect("/dashboard");
+});
+
+//shopping Cart routes
+router.get("/cart", async (req, res) => {
+  if (!req.session.cartId) {
+    return res.redirect("/");
+  }
+
+  const cart = await cartsRepo.getOne(req.session.cartId);
+
+  for (let item of cart.items) {
+    const product = await productsRepo.getOne(item.id);
+
+    item.product = product;
+  }
+  res.render("cart", {
+    name: req.user.name,
+  }),
+    {
+      myCss: myCss,
+    };
+});
+
+router.post("/cart", async (req, res) => {
+  console.log(req.body.productId);
+  let cart;
+  if (!req.session.cartId) {
+    let cart = await cartsRepo.create({ items: [] });
+    req.session.cartId = cart.id;
+  } else {
+    let cart = await cartsRepo.getOne(req.session.cartId);
+  }
+  const existingItem = cart.items.find(
+    (item) => item.id === req.body.productId
+  );
+
+  if (existingItem) {
+    existingItem.quantity++;
+  } else {
+    cart.items.push({ id: req.body.productId, quantity: 1 });
+  }
+  await cartsRepo.update(cart.id),
+    {
+      items: carts.items,
+    };
+  res.render("cart", {
+    name: req.user.name,
+    items: cart.items,
+  }),
+    {
+      myCss: myCss,
+    };
+});
+
+router.post("/cart", async (req, res) => {
+  const { itemId } = req.body;
+  const cart = await cartsRepo.getOne(req.session.cartId);
+  const items = cart.items.filter((item) => item.id !== itemId);
+  await cartsRepo.update(req.session.cartId, { items });
+  res.redirect("/cart");
 });
 
 module.exports = router;
