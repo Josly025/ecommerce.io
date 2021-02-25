@@ -81,7 +81,7 @@ router.delete("/admin/:id/delete", ensureAutheticated, async (req, res) => {
     };
 });
 
-//shopping Cart routes
+//shopping Cart routes -- cart & cartList.ejs
 router.get("/cart", async (req, res) => {
   const cartProducts = await cartsRepo.getAll();
 

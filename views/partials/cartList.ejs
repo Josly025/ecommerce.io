@@ -20,9 +20,8 @@
       <th class="uk-width-small uk-text-center uk-text-secondary">Image</th>
       <th class="uk-width-small uk-text-center uk-text-secondary">Product</th>
       <th class="uk-width-small uk-text-center uk-text-secondary">Price</th>
-
       <th class="uk-width-small uk-text-center uk-text-secondary">
-        Remove Product
+        Remove From Cart
       </th>
     </tr>
   </thead>
@@ -55,5 +54,19 @@
       </td>
     </tr>
     <% }) %>
+    <tr>
+      <td class="uk-width-small uk-text-center"></td>
+      <td class="uk-width-small uk-text-center admin__table--text">
+        Total Price:
+      </td>
+      <td class="uk-width-small uk-text-center admin__table--text">$$$$</td>
+      <td class="uk-width-small uk-text-center">
+        <form method="POST" action="#">
+          <button type="submit" class="uk-button uk-button-default">
+            Checkout<span class="uk-margin-small-left" uk-icon="cart"></span>
+          </button>
+        </form>
+      </td>
+    </tr>
   </tbody>
 </table>
