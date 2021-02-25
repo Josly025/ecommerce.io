@@ -10,7 +10,6 @@ const myCss = {
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
 const productsRepo = require("../repositories/products");
-const carts = require("../repositories/carts");
 
 // at "/ " render the welcome view
 router.get("/", (req, res) => {
@@ -71,33 +70,26 @@ router.get("/admin", async (req, res) => {
 });
 
 ///delete product from admin page
-router.post("admin/:id/delete", async (req, res) => {
+router.delete("admin/:id/delete", async (req, res) => {
   await productsRepo.delete(req.params.id);
+
   res.redirect("/admin");
 });
 
 //shopping Cart routes
 router.get("/cart", async (req, res) => {
-  if (!req.session.cartId) {
-    return res.redirect("/");
-  }
+  const cartProducts = await cartsRepo.getAll();
 
-  const cart = await cartsRepo.getOne(req.session.cartId);
-
-  for (let item of cart.items) {
-    const product = await productsRepo.getOne(item.id);
-
-    item.product = product;
-  }
   res.render("cart", {
     name: req.user.name,
+    cartProducts: cartProducts,
   }),
     {
       myCss: myCss,
     };
 });
 
-router.post("/cart", async (req, res) => {
+router.post("/cart/item", async (req, res) => {
   console.log(req.body.productId);
   let cart;
   if (!req.session.cartId) {
@@ -128,7 +120,7 @@ router.post("/cart", async (req, res) => {
     };
 });
 
-router.post("/cart", async (req, res) => {
+router.post("/cart/delete", async (req, res) => {
   const { itemId } = req.body;
   const cart = await cartsRepo.getOne(req.session.cartId);
   const items = cart.items.filter((item) => item.id !== itemId);
