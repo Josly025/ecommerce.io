@@ -43,18 +43,9 @@
       <td class="uk-width-small uk-text-center admin__table--text">
         $<%= product.price %>
       </td>
+
       <td class="uk-width-small uk-text-center">
-        <button class="uk-button uk-button-default" type="button">
-          <a
-            href=""
-            class="uk-icon-link uk-margin-small-right"
-            uk-icon="file-edit"
-          ></a>
-          Edit
-        </button>
-      </td>
-      <td class="uk-width-small uk-text-center">
-        <form method="POST" action="/admin/<%= product.id %>/delete">
+        <form method="POST" action="/cart/<%= product.id %>/delete">
           <button
             type="submit"
             class="uk-button uk-button-default"

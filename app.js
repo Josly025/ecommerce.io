@@ -6,14 +6,14 @@ const passport = require("passport");
 //using flash method because we are redirecting and want to store it in the session
 const flash = require("connect-flash");
 const session = require("express-session");
-
+const methodOverride = require("method-override");
 require("./config/passport")(passport);
 
 const app = express();
 
 //Connect to DB
 const db = require("./config/keys").MongoURI;
-
+app.use(methodOverride("_method"));
 //Connect to Mongo with mongoose
 mongoose
   .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -56,8 +56,6 @@ app.use((req, res, next) => {
 //ROUTES!!! - index vs. users file
 app.use("/", require("./routes/index.js"));
 app.use("/users", require("./routes/users.js"));
-
-///
 
 /////
 //Start listening at localhost:3000

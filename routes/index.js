@@ -59,7 +59,7 @@ router.post(
 );
 
 router.get("/admin", async (req, res) => {
-  const productsTwo = await productsRepo.getAll();
+  let productsTwo = await productsRepo.getAll();
   res.render("admin", {
     name: req.user.name,
     productsTwo: productsTwo,
@@ -69,11 +69,16 @@ router.get("/admin", async (req, res) => {
     };
 });
 
-///delete product from admin page
-router.delete("admin/:id/delete", async (req, res) => {
+//Delete button on productAdmin - delete route override
+router.delete("/admin/:id/delete", ensureAutheticated, async (req, res) => {
   await productsRepo.delete(req.params.id);
-
-  res.redirect("/admin");
+  res.redirect("/dashboard", {
+    name: req.user.name,
+    productsTwo: productsTwo,
+  }),
+    {
+      myCss: myCss,
+    };
 });
 
 //shopping Cart routes
@@ -120,7 +125,7 @@ router.post("/cart/item", async (req, res) => {
     };
 });
 
-router.post("/cart/delete", async (req, res) => {
+router.post("/cart/:id/delete", async (req, res) => {
   const { itemId } = req.body;
   const cart = await cartsRepo.getOne(req.session.cartId);
   const items = cart.items.filter((item) => item.id !== itemId);
