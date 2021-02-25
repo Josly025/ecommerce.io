@@ -73,7 +73,7 @@ router.get("/admin", async (req, res) => {
 ///delete product from admin page
 router.post("admin/:id/delete", async (req, res) => {
   await productsRepo.delete(req.params.id);
-  res.redirect("/dashboard");
+  res.redirect("/admin");
 });
 
 //shopping Cart routes
