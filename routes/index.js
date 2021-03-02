@@ -102,15 +102,22 @@ router.post("/cart/item", async (req, res) => {
   await cartsRepo.update(cart.id, {
     items: cart.items,
   });
-  res.send("Product added to cart");
+  res.redirect("/dashboard");
 });
 
-router.get("/cart", ensureAutheticated, async (req, res) => {
-  let cartProducts = await productsRepo.getOne(item.id);
+router.get("/cart", async (req, res) => {
+  let cartGet = await cartsRepo.getOne(req.session.cartId);
+  let products;
+  console.log(` ${JSON.stringify(cartGet.items)} this is cartGet ***`);
+  cartGet.items.forEach((item) => {
+    products = productsRepo.getOne(item.id);
+    item.product = product;
+  });
 
   res.render("cart", {
     name: req.user.name,
-    cartProducts: cartProducts,
+    products: products,
+    items: cart.items,
   }),
     {
       myCss: myCss,

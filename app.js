@@ -8,7 +8,7 @@ const flash = require("connect-flash");
 const session = require("express-session");
 const methodOverride = require("method-override");
 require("./config/passport")(passport);
-
+const cookieSession = require("cookie-session");
 const app = express();
 
 //Connect to DB
