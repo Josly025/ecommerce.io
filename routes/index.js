@@ -82,8 +82,8 @@ router.delete("/admin/:id/delete", ensureAutheticated, async (req, res) => {
 });
 
 //shopping Cart routes -- cart & cartList.ejs
-router.get("/cart", async (req, res) => {
-  const cartProducts = await cartsRepo.getAll();
+router.get("/cart", ensureAutheticated, async (req, res) => {
+  let cartProducts = await productsRepo.getOne(item.id);
 
   res.render("cart", {
     name: req.user.name,
@@ -98,10 +98,10 @@ router.post("/cart/item", async (req, res) => {
   console.log(req.body.productId);
   let cart;
   if (!req.session.cartId) {
-    let cart = await cartsRepo.create({ items: [] });
+    cart = await cartsRepo.create({ items: [] });
     req.session.cartId = cart.id;
   } else {
-    let cart = await cartsRepo.getOne(req.session.cartId);
+    cart = await cartsRepo.getOne(req.session.cartId);
   }
   const existingItem = cart.items.find(
     (item) => item.id === req.body.productId
@@ -114,15 +114,9 @@ router.post("/cart/item", async (req, res) => {
   }
   await cartsRepo.update(cart.id),
     {
-      items: carts.items,
+      items: cart.items,
     };
-  res.render("cart", {
-    name: req.user.name,
-    items: cart.items,
-  }),
-    {
-      myCss: myCss,
-    };
+  res.redirect("/cart");
 });
 
 router.post("/cart/:id/delete", async (req, res) => {
