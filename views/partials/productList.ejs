@@ -20,7 +20,7 @@
         <h3 class="uk-card-title dash__title--product"><%= product.title %></h3>
         <h3 class="uk-card-title dash__price">$<%= product.price %></h3>
       </div>
-      <form method="POST" action="/cart/item?_method=DELETE">
+      <form method="POST" action="/cart/item">
         <input hidden value="<%= product.id %>" name="productId" />
         <button
           class="uk-button uk-button-default uk-margin-medium-bottom dash__cartBtn"
