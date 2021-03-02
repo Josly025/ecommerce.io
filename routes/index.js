@@ -117,12 +117,18 @@ router.get("/cart", ensureAutheticated, async (req, res) => {
     };
 });
 
-router.post("/cart/:id/delete", ensureAutheticated, async (req, res) => {
+router.delete("/cart/:id/delete", ensureAutheticated, async (req, res) => {
   const { itemId } = req.body;
   const cart = await cartsRepo.getOne(req.session.cartId);
   const items = cart.items.filter((item) => item.id !== itemId);
   await cartsRepo.update(req.session.cartId, { items });
-  res.redirect("/cart");
+  res.redirect("/cart", {
+    name: req.user.name,
+    cartProducts: cartProducts,
+  }),
+    {
+      myCss: myCss,
+    };
 });
 
 module.exports = router;
