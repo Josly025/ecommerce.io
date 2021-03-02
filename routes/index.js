@@ -4,12 +4,12 @@ const { requireTitle, requirePrice } = require("../config/validators");
 const fs = require("fs");
 const multer = require("multer");
 const cartsRepo = require("../repositories/carts");
+const productsRepo = require("../repositories/products");
 const myCss = {
   style: fs.readFileSync("./public/css/style.css", "utf8"),
 };
 const router = express.Router();
 const upload = multer({ storage: multer.memoryStorage() });
-const productsRepo = require("../repositories/products");
 
 // at "/ " render the welcome view
 router.get("/", (req, res) => {
@@ -82,20 +82,7 @@ router.delete("/admin/:id/delete", ensureAutheticated, async (req, res) => {
 });
 
 //shopping Cart routes -- cart & cartList.ejs
-router.get("/cart", ensureAutheticated, async (req, res) => {
-  let cartProducts = await productsRepo.getOne(item.id);
-
-  res.render("cart", {
-    name: req.user.name,
-    cartProducts: cartProducts,
-  }),
-    {
-      myCss: myCss,
-    };
-});
-
 router.post("/cart/item", async (req, res) => {
-  console.log(req.body.productId);
   let cart;
   if (!req.session.cartId) {
     cart = await cartsRepo.create({ items: [] });
@@ -112,11 +99,22 @@ router.post("/cart/item", async (req, res) => {
   } else {
     cart.items.push({ id: req.body.productId, quantity: 1 });
   }
-  await cartsRepo.update(cart.id),
+  await cartsRepo.update(cart.id, {
+    items: cart.items,
+  });
+  res.send("Product added to cart");
+});
+
+router.get("/cart", ensureAutheticated, async (req, res) => {
+  let cartProducts = await productsRepo.getOne(item.id);
+
+  res.render("cart", {
+    name: req.user.name,
+    cartProducts: cartProducts,
+  }),
     {
-      items: cart.items,
+      myCss: myCss,
     };
-  res.redirect("/cart");
 });
 
 router.post("/cart/:id/delete", async (req, res) => {
