@@ -1,0 +1,29 @@
+.btn {
+  &__admin {
+    border: solid 1px $color-green;
+    color: $color-black;
+    &:hover {
+      background: $color-green;
+      border: solid 1px $color-black;
+      color: $color-black;
+    }
+  }
+  &__cart {
+    border: solid 1px $color-green;
+    color: $color-black;
+    &:hover {
+      background: $color-green;
+      border: solid 1px $color-black;
+      color: $color-black;
+    }
+  }
+}
+
+#btn__checkout {
+  border: solid 1px $color-green;
+  &:hover {
+    background: $color-green;
+    border: solid 1px $color-black;
+    color: $color-black;
+  }
+}

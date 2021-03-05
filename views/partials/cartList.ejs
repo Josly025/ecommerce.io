@@ -52,7 +52,7 @@
           <input hidden value="<%= item.id %>" name="itemId" />
           <button
             type="submit"
-            class="uk-button uk-button-default"
+            class="uk-button uk-button-default btn__cart"
             uk-close
           ></button>
         </form>
@@ -71,7 +71,11 @@
       ></td>
       <td class="uk-width-small uk-text-center">
         <form method="POST" action="#">
-          <button type="submit" class="uk-button uk-button-default">
+          <button
+            id="btn__checkout"
+            type="submit"
+            class="uk-button uk-button-default"
+          >
             Checkout<span class="uk-margin-small-left" uk-icon="cart"></span>
           </button>
         </form>
