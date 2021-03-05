@@ -1,5 +1,5 @@
 const express = require("express");
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const passport = require("passport");
@@ -23,6 +23,7 @@ mongoose
 //ejs middlewearLayouts
 app.use(expressLayouts);
 app.set("view engine", "ejs");
+app.get("./public/images/snow.ico", (req, res) => res.status(204));
 ///Reference to css
 app.use(express.static("./public"));
 app.use("/js/shop", express.static(__dirname + "public"));
@@ -32,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 /// Express session middleware
 //took out cookie
 app.use(
-  session({
+  cookieSession({
     secret: "secret coding",
     resave: true,
     saveUninitialized: true,

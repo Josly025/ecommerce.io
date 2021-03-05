@@ -106,17 +106,16 @@ router.post("/cart/item", async (req, res) => {
 });
 
 router.get("/cart", async (req, res) => {
-  let cartGet = await cartsRepo.getOne(req.session.cartId);
-  let products;
-  console.log(` ${JSON.stringify(cartGet.items)} this is cartGet ***`);
-  cartGet.items.forEach((item) => {
-    products = productsRepo.getOne(item.id);
-    item.product = product;
-  });
+  const cart = await cartsRepo.getOne(req.session.cartId);
 
+  console.log(cart);
+  for (let item of cart.items) {
+    const product = await productsRepo.getOne(item.id);
+
+    item.product = product;
+  }
+  console.log(cart.items);
   res.render("cart", {
-    name: req.user.name,
-    products: products,
     items: cart.items,
   }),
     {
@@ -124,14 +123,14 @@ router.get("/cart", async (req, res) => {
     };
 });
 
-router.delete("/cart/:id/delete", ensureAutheticated, async (req, res) => {
+router.post("/cart/delete/:id", ensureAutheticated, async (req, res) => {
   const { itemId } = req.body;
   const cart = await cartsRepo.getOne(req.session.cartId);
   const items = cart.items.filter((item) => item.id !== itemId);
   await cartsRepo.update(req.session.cartId, { items });
   res.redirect("/cart", {
     name: req.user.name,
-    cartProducts: cartProducts,
+    products: products,
   }),
     {
       myCss: myCss,

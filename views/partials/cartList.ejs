@@ -19,6 +19,7 @@
     <tr>
       <th class="uk-width-small uk-text-center uk-text-secondary">Image</th>
       <th class="uk-width-small uk-text-center uk-text-secondary">Product</th>
+      <th class="uk-width-small uk-text-center uk-text-secondary">Quantity</th>
       <th class="uk-width-small uk-text-center uk-text-secondary">Price</th>
       <th class="uk-width-small uk-text-center uk-text-secondary">
         Remove From Cart
@@ -26,25 +27,31 @@
     </tr>
   </thead>
   <tbody>
-    <% cartProducts.forEach((product) => { %>
+    <% items.forEach((item) => { %>
     <tr>
       <td class="uk-width-small uk-text-center">
         <img
           class="uk-preserve-width uk-border-circle"
-          src="data:image/png;base64, <%= product.image %>"
+          src="data:image/png;base64, <%= item.product.image %>"
           width="40"
           alt=""
         />
       </td>
       <td class="uk-width-small uk-text-center admin__table--text">
-        <%= product.title %>
+        <%= item.product.title %>
       </td>
-      <td class="uk-width-small uk-text-center admin__table--text">
-        $<%= product.price %>
+      <td class="uk-width-small uk-text-center admin__table--text quantity">
+        <%= item.quantity %>
+      </td>
+      <td class="uk-width-small uk-text-center admin__table--text price">
+        $ <%= item.product.price %>
       </td>
 
       <td class="uk-width-small uk-text-center">
-        <form method="POST" action="/cart/<%= product.id %>/delete">
+        <form
+          method="POST"
+          action="/cart/delete/<%= item.id %>/?_method=DELETE"
+        >
           <button
             type="submit"
             class="uk-button uk-button-default"
@@ -56,12 +63,17 @@
     <% }) %>
     <tr>
       <td class="uk-width-small uk-text-center"></td>
+      <td class="uk-width-small uk-text-center"></td>
       <td class="uk-width-small uk-text-center admin__table--text">
         Total Price:
       </td>
-      <td class="uk-width-small uk-text-center admin__table--text">$$$$</td>
+      <td
+        id="total"
+        class="uk-width-small uk-text-center admin__table--text"
+      ></td>
       <td class="uk-width-small uk-text-center">
-        <form method="POST" action="/cart/:id/delete?_method=DELETE">
+        <form method="POST" action="/cart/:id/delete">
+          <input hidden value="<%= item.id %>" name="itemId" />
           <button type="submit" class="uk-button uk-button-default">
             Checkout<span class="uk-margin-small-left" uk-icon="cart"></span>
           </button>
