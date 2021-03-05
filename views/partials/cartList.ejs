@@ -48,10 +48,8 @@
       </td>
 
       <td class="uk-width-small uk-text-center">
-        <form
-          method="POST"
-          action="/cart/delete/<%= item.id %>/?_method=DELETE"
-        >
+        <form method="POST" action="/cart/delete/<%= item.id %>">
+          <input hidden value="<%= item.id %>" name="itemId" />
           <button
             type="submit"
             class="uk-button uk-button-default"
@@ -72,8 +70,7 @@
         class="uk-width-small uk-text-center admin__table--text"
       ></td>
       <td class="uk-width-small uk-text-center">
-        <form method="POST" action="/cart/:id/delete">
-          <input hidden value="<%= item.id %>" name="itemId" />
+        <form method="POST" action="#">
           <button type="submit" class="uk-button uk-button-default">
             Checkout<span class="uk-margin-small-left" uk-icon="cart"></span>
           </button>

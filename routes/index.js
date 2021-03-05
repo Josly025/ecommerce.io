@@ -128,13 +128,7 @@ router.post("/cart/delete/:id", ensureAutheticated, async (req, res) => {
   const cart = await cartsRepo.getOne(req.session.cartId);
   const items = cart.items.filter((item) => item.id !== itemId);
   await cartsRepo.update(req.session.cartId, { items });
-  res.redirect("/cart", {
-    name: req.user.name,
-    products: products,
-  }),
-    {
-      myCss: myCss,
-    };
+  res.redirect("/cart");
 });
 
 module.exports = router;
