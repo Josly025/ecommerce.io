@@ -7,3 +7,18 @@ body {
   font-size: 10px;
   margin: 1rem;
 }
+
+html {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-black, 0.8),
+      rgba($color-black, 0.8)
+    ),
+    url("../../images/winter_trees.jpg");
+
+  height: 100%;
+  margin: 1rem;
+
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

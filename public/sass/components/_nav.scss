@@ -45,9 +45,6 @@
     color: $color-black !important;
     -webkit-text-stroke-width: 0.8px;
     -webkit-text-stroke-color: $color-green;
-    &:hover {
-      transform: scale(1, 0);
-    }
   }
   &--cart {
     font-size: 2rem;
