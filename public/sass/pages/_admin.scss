@@ -39,4 +39,11 @@
     -webkit-text-stroke-width: 0.8px;
     -webkit-text-stroke-color: $color-green;
   }
+  &__image {
+    border: $color-green solid 1px;
+  }
+}
+
+.cart__image {
+  border: $color-green solid 1px;
 }

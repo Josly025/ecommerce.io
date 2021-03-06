@@ -23,14 +23,15 @@ html {
 
 .btn__cart {
   border: solid 1px #1ec91e;
-  color: #333333; }
+  color: #1ec91e; }
   .btn__cart:hover {
     background: #1ec91e;
     border: solid 1px #333333;
     color: #333333; }
 
 #btn__checkout {
-  border: solid 1px #1ec91e; }
+  border: solid 1px #1ec91e;
+  color: #1ec91e; }
   #btn__checkout:hover {
     background: #1ec91e;
     border: solid 1px #333333;
@@ -395,3 +396,9 @@ html {
   color: #333333 !important;
   -webkit-text-stroke-width: 0.8px;
   -webkit-text-stroke-color: #1ec91e; }
+
+.admin__image {
+  border: #1ec91e solid 1px; }
+
+.cart__image {
+  border: #1ec91e solid 1px; }

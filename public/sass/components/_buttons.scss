@@ -10,7 +10,7 @@
   }
   &__cart {
     border: solid 1px $color-green;
-    color: $color-black;
+    color: $color-green;
     &:hover {
       background: $color-green;
       border: solid 1px $color-black;
@@ -21,6 +21,7 @@
 
 #btn__checkout {
   border: solid 1px $color-green;
+  color: $color-green;
   &:hover {
     background: $color-green;
     border: solid 1px $color-black;
