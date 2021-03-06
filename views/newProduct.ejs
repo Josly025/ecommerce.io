@@ -25,14 +25,14 @@
   </div>
 </nav>
 <!--Create Product Inputs-->
-<div class="uk-child-width-expand@s uk-text-center uk-margin-large-top" uk-grid uk-height-match="target: > div > .uk-card">
+<div class="uk-child-width-1-1 uk-text-center uk-position-center uk-margin-large-top  " uk-grid uk-height-match="target: > div > .uk-card">
     <div class="newProduct">
-        <div class="uk-card uk-card-default uk-card-body ">
+        <div class="uk-card uk-card-default uk-card-body  newProduct__card ">
           <!--multipart takes off default encoding type-->
            <form method="POST" enctype="multipart/form-data">
         <div class="uk-margin uk-text-center">
-          <h3 class="newProduct__title">Create Product</h3>
-          <div class="uk-inline uk-width-1-3">
+          <h3 class="newProduct__title uk-margin-medium-bottom">Create Product</h3>
+          <div class="uk-inline uk-width-1-1">
             <span class="uk-form-icon" uk-icon="icon: info"></span>
             <input
               class="uk-input newProduct__input"
@@ -45,7 +45,7 @@
         </div>
 
         <div class="uk-margin uk-text-center">
-          <div class="uk-inline uk-width-1-3">
+          <div class="uk-inline uk-width-1-1">
             <span
               class="uk-form-icon uk-form-icon"
               uk-icon="icon: tag"
@@ -68,7 +68,7 @@
 <!--product submit-->
         <button
           type="submit"
-          class="uk-button uk-button-primary newProduct__btn uk-width-1-3 "
+          class="uk-button uk-button-primary newProduct__btn uk-width-1-1 "
         >
           Create Product
         </button>
