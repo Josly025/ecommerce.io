@@ -1,4 +1,8 @@
 .newProduct {
+  @media only screen and (max-width: 600px) {
+    margin-left: 1.25rem;
+  }
+
   &__title {
     font-size: 2.5rem;
     text-transform: uppercase;

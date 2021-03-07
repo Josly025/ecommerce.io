@@ -47,3 +47,10 @@
 .cart__image {
   border: $color-green solid 1px;
 }
+
+@media only screen and (max-width: 710px) {
+  #admin__new {
+    display: inline;
+    padding: 1rem 1rem;
+  }
+}
