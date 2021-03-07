@@ -1,29 +1,49 @@
 <!--Nav component-->
-<nav class="uk-navbar-container nav" uk-navbar>
-  <div class="uk-navbar-left">
-    <ul class="uk-navbar-nav">
-      <li class="uk-active"><a class="nav__title" href="#">Shred Outlet</a></li>
-      <li>
-        <li><a href="/dashboard"class="nav__link">Dashboard</a></li>
+<div>
+  <nav class="uk-container uk-background-muted nav uk-flex-center" uk-navbar>
+    <button
+      type="button"
+      class="navbar-toggle uk-hidden@l"
+      uk-toggle="target:.toggle-target; cls:collapsed"
+    >
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div class="uk-navbar-left nav__left">
+      <ul class="uk-navbar-nav uk-algin-center">
+        <li>
+          <a href="#" class="uk-navbar-item uk-logo nav__title">Shred Outlet</a>
+        </li>
+        <li>
+          <a class="nav__left--name">Welcome, <%= name %></a>
+        </li>
+        <li class="uk-active">
+          <a href="/cart"
+            ><i class="fas fa-shopping-cart nav__left--cart"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+    <div class="uk-navbar-right toggle-target collapsed nav__right">
+      <ul class="uk-navbar-nav uk-algin-center">
+        <li><a href="/dashboard" class="nav__link">Dashboard</a></li>
         <li><a href="/newProduct" class="nav__link">New Product</a></li>
-         <li><a href="/admin" class="nav__link">Admin</a></li>
-      </li>
-    </ul>
-  </div>
-  <div class="uk-navbar-right nav__left">
-    <ul class="uk-navbar-nav">
-      
-      <li class="uk-active">
-        <a href="/cart"
-          ><i class="fas fa-shopping-cart nav__left--cart"></i
-        ></a>
-      </li>
-      <li class="uk-active">
-        <a class="nav__left--logout" href="/users/logout">Logout<i class="fas fa-sign-out-alt nav__left--icon"></i></a>
-      </li>
-    </ul>
-  </div>
-</nav>
+        <li><a href="/admin" class="nav__link">Admin</a></li>
+        <li>
+          <a class="nav__left--logout" href="/users/logout"
+            >Logout<i class="fas fa-sign-out-alt nav__left--icon"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
 <!--shopping cart layout-->
 <%- include ("./partials/cartList.ejs")%>
-<div  class="footer uk-margin uk-card uk-card uk-text-center uk-text-primary uk-card-body " >Shred Outlet &copy;</div>
+<div
+  class="footer uk-margin uk-card uk-card uk-text-center uk-text-primary uk-card-body"
+>
+  Shred Outlet &copy;
+</div>

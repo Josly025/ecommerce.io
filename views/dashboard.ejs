@@ -1,8 +1,8 @@
 <div>
-  <nav class="uk-container uk-background-secondary nav" uk-navbar>
+  <nav class="uk-container uk-background-muted nav uk-flex-center" uk-navbar>
     <button
       type="button"
-      class="navbar-toggle uk-hidden@m"
+      class="navbar-toggle uk-hidden@l"
       uk-toggle="target:.toggle-target; cls:collapsed"
     >
       <span class="sr-only">Toggle navigation</span>
@@ -10,13 +10,10 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-
     <div class="uk-navbar-left nav__left">
       <ul class="uk-navbar-nav uk-algin-center">
         <li>
-          <a href="#" id="logo" class="uk-navbar-item uk-logo nav__title"
-            >Shred Outlet</a
-          >
+          <a href="#" class="uk-navbar-item uk-logo nav__title">Shred Outlet</a>
         </li>
         <li>
           <a class="nav__left--name">Welcome, <%= name %></a>
