@@ -45,7 +45,6 @@
     color: $color-white !important;
     letter-spacing: 0.1rem;
     width: 14rem;
-    margin-left: 1.2rem;
   }
   &__text {
     font-size: 1rem;
@@ -55,5 +54,26 @@
     font-size: 1rem;
     margin-left: 0.5rem;
     color: $color-black !important;
+  }
+  &__card {
+    @media only screen and (max-width: 1050px) {
+      width: 100%;
+    }
+    @media only screen and (max-width: 775px) {
+      margin-right: 28rem;
+      margin-left: 8rem;
+    }
+
+    @media only screen and (max-width: 420px) {
+      margin-left: -12rem;
+      margin-top: -4rem;
+      width: 40%;
+    }
+
+    @media only screen and (max-width: 376px) {
+      margin-left: -16rem;
+      margin-top: -4rem;
+      width: 40%;
+    }
   }
 }

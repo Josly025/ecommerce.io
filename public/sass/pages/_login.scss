@@ -53,4 +53,25 @@
     margin-left: 0.5rem;
     color: $color-black !important;
   }
+  &__card {
+    @media only screen and (max-width: 1050px) {
+      width: 80%;
+    }
+    @media only screen and (max-width: 775px) {
+      margin-right: 28rem;
+      margin-left: 8rem;
+    }
+
+    @media only screen and (max-width: 420px) {
+      margin-left: -12rem;
+      margin-top: -4rem;
+      width: 40%;
+    }
+
+    @media only screen and (max-width: 376px) {
+      margin-left: -16rem;
+      margin-top: -4rem;
+      width: 40%;
+    }
+  }
 }

@@ -239,6 +239,12 @@ html {
     .welcome__anchor--link:hover {
       color: #333333;
       text-decoration: none; }
+  @media only screen and (max-width: 775px) {
+    .welcome__card {
+      margin-right: 18rem; } }
+  @media only screen and (max-width: 450px) {
+    .welcome__card {
+      margin-right: 40rem; } }
 
 .dash__card {
   border: 3px solid #1ec91e; }
@@ -330,6 +336,23 @@ html {
     font-size: 1rem;
     margin-left: 0.5rem;
     color: #333333 !important; }
+  @media only screen and (max-width: 1050px) {
+    .login__card {
+      width: 80%; } }
+  @media only screen and (max-width: 775px) {
+    .login__card {
+      margin-right: 28rem;
+      margin-left: 8rem; } }
+  @media only screen and (max-width: 420px) {
+    .login__card {
+      margin-left: -12rem;
+      margin-top: -4rem;
+      width: 40%; } }
+  @media only screen and (max-width: 376px) {
+    .login__card {
+      margin-left: -16rem;
+      margin-top: -4rem;
+      width: 40%; } }
 
 .signup {
   background-image: url("../images/gear.png");
@@ -371,8 +394,7 @@ html {
     background: #1ec91e !important;
     color: rgba(255, 255, 255, 0.849) !important;
     letter-spacing: 0.1rem;
-    width: 14rem;
-    margin-left: 1.2rem; }
+    width: 14rem; }
   .signup__text {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.849); }
@@ -380,6 +402,23 @@ html {
     font-size: 1rem;
     margin-left: 0.5rem;
     color: #333333 !important; }
+  @media only screen and (max-width: 1050px) {
+    .signup__card {
+      width: 100%; } }
+  @media only screen and (max-width: 775px) {
+    .signup__card {
+      margin-right: 28rem;
+      margin-left: 8rem; } }
+  @media only screen and (max-width: 420px) {
+    .signup__card {
+      margin-left: -12rem;
+      margin-top: -4rem;
+      width: 40%; } }
+  @media only screen and (max-width: 376px) {
+    .signup__card {
+      margin-left: -16rem;
+      margin-top: -4rem;
+      width: 40%; } }
 
 @media only screen and (max-width: 600px) {
   .newProduct {
